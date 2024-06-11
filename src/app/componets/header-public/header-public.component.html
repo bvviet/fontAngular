@@ -1,0 +1,28 @@
+<header class="header">
+    <div class="logo">
+        <a routerLink="/">
+            <img src="../../../assets/Logo.png" alt="">
+        </a>
+    </div>
+    <nav class="navBar">
+        <ul>
+            <li><a href="#" class="active">Product</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="search">
+        <input type="text" id="searchId" #searchInput placeholder="Search for a product">
+        <button type="button" (click)="search(searchInput.value)" class="book search__btn">Tìm</button>
+    </div>
+
+
+    <div class="action">
+        <a href="/admin"><button class="login">Admin</button></a>
+        <a href="/login"><button class="login">Login</button></a>
+        <a href="/register"><button class="book">Đăng ký</button></a>
+    </div>
+
+</header>

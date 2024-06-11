@@ -1,0 +1,14 @@
+.goBack {
+  width: 80px;
+  margin-right: 5px;
+  background: #018294;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 30px;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+

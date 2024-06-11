@@ -1,0 +1,64 @@
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: #018294;
+}
+
+.logo {
+  width: 80px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 20px;
+  img {
+    width: 100%;
+  }
+}
+
+.sidebarList {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+  margin-top: 50px;
+  gap: 40px;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    font-size: 12.3px;
+    font-weight: 500;
+  }
+}
+
+.active {
+  display: flex;
+  width: 95%;
+  padding-left: 10px;
+  height: 38.704px;
+  border-radius: 6.83px 0px 0px 6.83px;
+  background: #f5f6fd;
+}
+
+.active a {
+  color: #018294; /* Màu văn bản cho liên kết */
+}
+
+.active svg path {
+  fill: #018294; /* Màu sắc cho các path trong SVG */
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -60px;
+  margin-top: 60px;
+  gap: 10px;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+  p {
+    color: white;
+  }
+}

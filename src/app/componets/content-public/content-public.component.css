@@ -1,0 +1,65 @@
+.content {
+  margin: 50px 0;
+}
+
+.list__product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  row-gap: 40px;
+}
+
+.item__product {
+  width: 370px;
+  img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+  }
+}
+
+.df {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.men {
+  color: var(--Black-100, #676562);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modern {
+  color: var(--Black, #2d2d2d);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+
+.df:first-child {
+  margin-top: 20px;
+}
+
+.df:nth-child(2) {
+  margin: 13px 0;
+}
+
+.df__last {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 60px;
+}
+
+button {
+  cursor: pointer;
+}

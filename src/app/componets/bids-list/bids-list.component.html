@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>Email</th>
+        <th>User</th>
+        <th>Pice</th>
+        <th>Date</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let bid of bidsDetail?.bids">
+        <td>{{bid.userId.email}}</td>
+        <td>{{bid.userId.useName}}</td>
+        <td>{{bid.price}}</td>
+        <td>{{bid.createdAt}}</td>
+        <td>
+            @if(bid.price === bidsDetail?.bidPriceMax && !bid.isWinBid){
+            <button (click)="handleSetBid(bid._id)">Xét</button>
+            } @else if (bid.isWinBid) {
+        <td>chiến thắng</td>
+        }
+        </td>
+    </tr>
+</table>

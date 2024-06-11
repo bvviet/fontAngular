@@ -1,0 +1,44 @@
+<main class="content">
+    <ng-container *ngIf="products && products.length > 0; else noProducts">
+        <section class="list__product">
+            <article class="item__product" *ngFor="let product of products">
+                <a [routerLink]="['/detail', product._id]">
+                    <img src="../../../assets/Images.png" alt="img Product">
+                </a>
+                <div class="product">
+                    <div class="df">
+                        <p class="men">{{ product.isShow }}</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+                            <path
+                                d="M9.28469 2.93289L9.99818 3.65946L10.7117 2.93289C11.5744 2.0544 12.9509 1 14.4264 1C15.8371 1 16.9711 1.47502 17.7472 2.22871C18.5211 2.98034 19 4.06744 19 5.41255C19 6.86866 18.4185 8.09645 17.4603 9.25823C16.4829 10.4434 15.1706 11.4943 13.7759 12.606C13.7759 12.606 13.7758 12.6061 13.7758 12.6061L13.7527 12.6245C12.4865 13.6333 11.0917 14.7447 9.99867 15.9918C8.91637 14.755 7.53442 13.6523 6.27905 12.6506L6.22374 12.6065L6.22334 12.6061C4.82824 11.494 3.51605 10.4428 2.53897 9.25769C1.58118 8.09595 1 6.86833 1 5.41255C1 4.06745 1.47886 2.98037 2.25289 2.22875C3.02906 1.47506 4.16325 1 5.57455 1C7.04848 1 8.42122 2.0536 9.28469 2.93289Z"
+                                stroke="#2D2D2D" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="df">
+                        <p class="modern">{{ product.title }}</p>
+                    </div>
+                    <div class="df">
+                        <div class="df__last">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22"
+                                fill="none">
+                                <path
+                                    d="M24 8.42069H14.84L12 0L9.16 8.42069H0L7.4 13.6172L4.6 22L12 16.8034L19.4 22L16.56 13.5793L24 8.42069Z"
+                                    fill="#F7D047" />
+                            </svg>
+                            <p class="men">5.0 (28)</p>
+                        </div>
+                        <p class="modern">${{ product.price }}</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div class="page">
+            <button (click)="prevPage()" [disabled]="page <= 1">Previous</button>
+            <span>Page {{ page }} of {{ totalPages }}</span>
+            <button (click)="nextPage()" [disabled]="page >= totalPages">Next</button>
+        </div>
+    </ng-container>
+    <ng-template #noProducts>
+        <div>Không có sản phẩm</div>
+    </ng-template>
+</main>

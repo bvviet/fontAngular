@@ -1,0 +1,79 @@
+.background {
+  height: 400px;
+  border-radius: 20px;
+  background: #018294;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 44px; /* 115.789% */
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  margin-top: 27px;
+  gap: 16px;
+  p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px; /* 100% */
+  }
+}
+
+.book {
+  width: 175px;
+  height: 58px;
+  border-radius: 50px;
+  background: var(--Yellow, #f7d047);
+  color: var(--Black, #2d2d2d);
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 19px; /* 100% */
+  margin: 30px 0 19px 0;
+}
+
+/*  */
+.header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.navBar {
+  margin-left: 53.73px;
+}
+
+.navBar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navBar a {
+  color: var(--Black-100, #676562);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 18px;
+}
+
+.navBar .active {
+  color: var(--Shape, #018294);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: auto;
+}

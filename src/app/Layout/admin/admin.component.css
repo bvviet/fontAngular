@@ -1,0 +1,15 @@
+.wapper {
+  display: flex;
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.main {
+  width: 100%;
+  background: #f7f1e8;
+}
+
+.content {
+  width: 95%;
+  margin: 0 auto;
+}

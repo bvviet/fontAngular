@@ -1,0 +1,31 @@
+.wapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 750px;
+  height: 490px;
+  padding: 60px 0 0 0;
+}
+
+p {
+  color: var(--Black, #2d2d2d);
+  text-align: center;
+
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 44px;
+}
+
+.goBack {
+  width: 158px;
+  height: 62px;
+  margin-top: 42px;
+  background: #018294;
+  color: white;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 30px;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 5px;
+}

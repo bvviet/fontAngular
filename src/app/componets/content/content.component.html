@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <p class="title">Dashboard</p>
+    <ng-container *ngIf="products && products.length>0; else noProducts">
+        <p-messages [(value)]="messages"></p-messages>
+        <section class="product-list">
+            <table class="product-table" *ngIf="products">
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Mô tả</th>
+                    <th>Hình ảnh</th>
+                    <th>Giá</th>
+                    <th>Hành động</th>
+                </tr>
+
+                <tr class="prouct-item" *ngFor="let product of products">
+
+                    <td>
+                        <p class="product__item-title">{{product.title}}</p>
+                    </td>
+                    <td>
+                        <p class="product__item-desc">{{product.desc}}</p>
+                    </td>
+                    <td>
+                        <a [routerLink]="['/admin/detail', product._id]">
+                            <img src="../../../assets/Images.png" alt="" class="product__item-image">
+                        </a>
+                    </td>
+                    <td>
+                        <p class="product__item-price">{{product.price}}</p>
+                    </td>
+                    <td class="button">
+                        <app-button [title]="'Xóa'" (buttonClick)="handleButtonClick(product._id)"></app-button>
+                        <a [routerLink]="['/admin/update',product._id]">Cập nhật</a>
+                        <a [routerLink]="['/admin/',product._id,'bidsList']">Ds bids</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <div class="page">
+            <button (click)="prevPage()" [disabled]="page <= 1">Previous</button>
+            <span>Page {{ page }} of {{ totalPages }}</span>
+            <button (click)="nextPage()" [disabled]="page >= totalPages">Next</button>
+        </div>
+    </ng-container>
+    <ng-template #noProducts>
+        <div>Không có sản phẩm nào</div>
+    </ng-template>
+</div>

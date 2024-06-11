@@ -1,0 +1,109 @@
+<div class="wrapper">
+    <section>
+        <h2>Cập nhật sản phẩm</h2>
+
+        <!-- Thông báo -->
+        <p-messages [(value)]="messages"></p-messages>
+        <!-- Thẻ p để hiển thị thông báo lỗi -->
+        <p *ngIf="errorMessage" class="error-text" style="color: red;">
+            {{ errorMessage }}
+        </p>
+
+        <!-- Form -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form">
+                <!-- Title -->
+                <div class="input">
+                    <label for="name">Tên sản phẩm</label>
+                    <input type="text" id="name" placeholder="First name" formControlName="title">
+                    <div class="message">
+                        <div *ngIf="form.get('title')?.errors?.['required'] && form.controls.title.touched">Tên không
+                            được để trống.</div>
+                        <div *ngIf="form.get('title')?.errors?.['minlength'] && form.controls.title.touched">Tên Phải có
+                            ít nhất 5 kí tự.</div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="input">
+                    <p>Mô tả</p>
+                    <textarea name="desc" formControlName="desc" id="">{{product?.desc}}</textarea>
+                    <!-- <input type="text" placeholder="Description" formControlName="desc" [value]="product?.desc"> -->
+                    <div class="message">
+                        <div *ngIf="form.get('desc')?.errors?.['required'] && form.controls.desc.touched">Mô tả không
+                            được để trống.</div>
+                    </div>
+                </div>
+
+                <!-- Price -->
+                <div class="input">
+                    <label for="price">Giá sản phẩm</label>
+                    <input type="number" id="price" placeholder="Price" formControlName="price">
+                    <div class="message">
+                        <div *ngIf="form.get('price')?.errors?.['required'] && form.controls.price.touched">Giá không
+                            được để trống.</div>
+                        <div *ngIf="form.get('price')?.errors?.['min'] && form.controls.price.touched">Giá phải lớn hơn
+                            0</div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="input">
+                    <label for="image">Ảnh sản phẩm</label>
+                    <input type="text" id="image" placeholder="Image" formControlName="image">
+                    <div class="message">
+                        <div *ngIf="form.get('image')?.errors?.['required'] && form.controls.image.touched">Ảnh không
+                            được để trống.</div>
+                    </div>
+                </div>
+
+                <!-- show -->
+                <div class="input">
+                    <div class="check">
+                        is show:
+                        <div class="check__item">
+                            <input type="radio" name="isShow" id="is__True" formControlName="isShow" [value]="true"
+                                [checked]="product?.isShow === true">
+                            <label for="is__True">True</label>
+                        </div>
+                        <div class="check__item">
+                            <input type="radio" name="isShow" id="is__False" formControlName="isShow" [value]="false"
+                                [checked]="product?.isShow === false">
+                            <label for="is__False">False</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category -->
+                <div class="input">
+                    <p style="margin: 10px 0;">Danh Mục</p>
+                    <select name="category" formControlName="category">
+                        <option *ngFor="let categories of category " [value]="categories._id"
+                            [selected]="categories.name == product?.category?.name">{{categories.name}}
+                        </option>
+                    </select>
+                </div>
+                <!-- Thời gian bắt đầu -->
+                <div class="input">
+                    <label for="startTime">Thời gian bắt đầu</label>
+                    <input type="datetime-local" id="startTime" placeholder="Start Time" formControlName="startAt">
+                </div>
+
+                <div class="input">
+                    <label for="times" class="form-label">Select Times</label>
+                    <select class="form-control" id="times" formControlName="bidTime">
+                        <option value="">Select Time</option>
+                        <option value="15">15p</option>
+                        <option value="30">30p</option>
+                        <option value="60">1h</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="btn">
+                <app-button [title]="'Cập nhật'" disabled="onSubmit.invalid"></app-button>
+            </div>
+
+        </form>
+    </section>
+</div>

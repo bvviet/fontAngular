@@ -1,0 +1,57 @@
+<p-messages [(value)]="messagesToast"></p-messages>
+<p *ngIf="message" class="error-text" style="color: red;">
+    {{ message }}
+</p>
+<section class="warper">
+    <div class="left">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../../assets/logoRegister.png" alt="">
+        </div>
+        <!-- icon -->
+        <div class="icon">
+            <img src="../../../assets/Google.png" alt="">
+            <img src="../../../assets/apple.png" alt="">
+            <img src="../../../assets/fb.png" alt="">
+        </div>
+        <!-- Or Continue with -->
+        <div class="or">Or Continue with</div>
+        <!-- Form -->
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <input type="email" formControlName="email" placeholder="email">
+            <div class="message">
+                <div *ngIf="form.get('email')?.errors?.['required'] && form.controls.email.touched">
+                    Email không được để trống.
+                </div>
+                <div *ngIf="this.message">
+                    {{ this.message }}
+                </div>
+            </div>
+            <input type="text" formControlName="password" placeholder="Password (6 characters minimum)">
+            <div class="message">
+                <div *ngIf="form.get('password')?.errors?.['required'] && form.controls.password.touched">
+                    Password không được để trống.
+                </div>
+                <div *ngIf="form.get('password')?.errors?.['minlength'] && form.controls.password.touched">Mật khẩu Phải
+                    có ít nhất 5 kí tự.</div>
+            </div>
+            <!-- Agree -->
+            <div class="iAgree">
+                <div class="div__check">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">Remember me</label>
+                </div>
+                <p class="forgot">Forgot your password?</p>
+            </div>
+            <!-- Button -->
+            <button class="register">Sign In</button>
+        </form>
+    </div>
+    <!--  -->
+
+    <div class="right">
+        <img src="../../../assets/login1.png" alt="" class="img__Right">
+        <img src="../../../assets/login2.png" alt="" class="img__Right">
+        <img src="../../../assets/Union3.png" alt="" class="Union">
+    </div>
+</section>

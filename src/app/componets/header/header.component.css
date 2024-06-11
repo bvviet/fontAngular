@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 17px;
+  color: white;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  padding: 8.375px 99.614px 7.562px 11.238px;
+  width: 200px;
+  height: 32px;
+  border-radius: 6px;
+  border: 0.489px solid #018294;
+  input {
+    background: transparent;
+    border: none;
+    margin-left: 10px;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80px;
+  height: 32px;
+  padding: 7.399px 12.75px 7.399px 10.75px;
+  border-radius: 4px;
+  background: #018294;
+}

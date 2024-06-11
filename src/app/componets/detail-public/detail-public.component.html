@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <section class="content">
+        <div class="left">
+            <img src="../../../assets/Images.png" alt="" class="imgProduct">
+        </div>
+        <div class="right">
+            <p class="title">{{product?.title}}</p>
+            <p class="price">${{product?.price}}</p>
+            <div class="decription">
+                <p class="title__description">Description</p>
+                <p class="content__description">{{product?.desc}}</p>
+            </div>
+
+            <div *ngIf="isShowing" class="bidUi">
+                <countdown [config]="timerConfig" (event)="handleCountDown($event)"></countdown>
+
+                <form [formGroup]="bidForm" (ngSubmit)="submit()">
+                    <input type="number" placeholder="Số tiền" formControlName="price" class="bidPrice" />
+                    <div class="message">
+                        <div *ngIf="bidForm.get('price')?.errors?.['min'] && bidForm.controls.price.touched">Giá phải
+                            lớn hơn 0
+                        </div>
+                    </div>
+                    <!--  -->
+                    <button type="submit" class="bidButton">Đấu giá</button>
+                    <!--  -->
+                    <div *ngIf="highestBid" class="winer">
+                        <p>Người chiến thắng:</p>
+                        <p>Tên: {{ highestBid.userId.useName }} - Giá: {{ highestBid.price }}</p>
+                    </div>
+                    <p style="margin: 10px 0; color: brown;">Giá cao nhất: {{product?.bidPriceMax}}$</p>
+                    <!--  -->
+                    <ul *ngFor="let bid of product?.bids" >
+                        <li class="listBids">{{ bid.userId.useName }} - {{ bid.createdAt | date: 'dd/MM/yyyy HH:mm:ss':'+0700' }}</li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

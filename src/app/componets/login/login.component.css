@@ -1,0 +1,126 @@
+.warper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 1170px;
+  height: 632px;
+  margin: 52px 0;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px 0px 0px 20px;
+  background: var(--White-White, #fff);
+  .logo {
+    margin-top: 40px;
+    margin-bottom: 65px;
+  }
+  .icon {
+    display: flex;
+    gap: 24px;
+    margin: 28px 0 40px;
+  }
+  .or {
+    color: var(--Black-Black-300, #5d5d5d);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  input {
+    width: 520px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid var(--White-White-200, #c3c3c3);
+    padding: 12px 24px;
+    color: var(--Black-Black-300, #5d5d5d);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 8px 0;
+  }
+  .iAgree {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--Black-Black-300, #5d5d5d);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  .div__check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .forgot {
+    color: var(--Navy-Blue, #0058ff);
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    cursor: pointer;
+  }
+  #checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  .register {
+    margin-top: 20px;
+    display: flex;
+    width: 520px;
+    padding: 12px 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    background: var(--Navy-Blue, #0058ff);
+    color: var(--White-White, #fff);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    cursor: pointer;
+  }
+}
+
+.right {
+  position: relative;
+  border-radius: 0px 20px 20px 0px;
+  background: var(--Solid-Color-Han-Purple, #722fff);
+  .img__Right {
+    position: absolute;
+  }
+  .img__Right:first-child {
+    z-index: 2;
+    top: 88px;
+    left: 36px;
+  }
+  .img__Right:nth-child(2) {
+    top: 217px;
+    right: 48px;
+  }
+  .Union {
+    position: absolute;
+    top: 126px;
+    left: 289px;
+  }
+}
+
+.message {
+  color: red;
+  margin-top: 15px;
+}

@@ -1,0 +1,9 @@
+.wrapper {
+  background: var(--100, #f2ede6);
+}
+
+.content {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
